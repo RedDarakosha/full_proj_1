@@ -1,0 +1,7 @@
+django==3.0
+Pillow
+djangorestframework
+redis
+psycopg2
+django-debug-toolbar
+
