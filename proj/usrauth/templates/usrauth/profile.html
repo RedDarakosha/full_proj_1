@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block titile %}
+	{{user.first_name}}
+{% endblock %}
+
+{% block content %}
+	<h1>{{user.email}}</h1>
+	<h1>{{user.password}}</h1>
+{% endblock %}
