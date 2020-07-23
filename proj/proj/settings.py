@@ -140,3 +140,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'reddrakosha1@ya.ru'
+EMAIL_HOST_PASSWORD = 'Qwerty22102004'

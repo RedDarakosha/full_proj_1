@@ -7,13 +7,50 @@ class LoginForm(forms.Form):
 		widget = forms.TextInput(
 			attrs={
 				'placeholder':'email',
-				'class':'form_field email',
+				'class':'login_field email',
 			})
 		)
 	password = forms.CharField(
 		widget=forms.PasswordInput(
 			attrs={
 				'placeholder':'password',
-				'class':'form_field password', 
+				'class':'login_field password', 
 			})
 		)
+
+
+class SignUpForm(UserCreationForm):
+	first_name = forms.CharField(
+		widget=forms.TextInput(
+			attrs={
+				'placeholder':'how we can name you?',
+				'class':'register_field first_name'
+			})
+		)
+
+	email = forms.EmailField(
+		widget = forms.TextInput(
+			attrs={
+				'placeholder': 'email',
+				'class':'register_field email',
+			})
+		)
+
+	password1 = forms.CharField(
+		widget=forms.PasswordInput(
+			attrs={
+				'placeholder':'password',
+				'class':'login_field password1', 
+			})
+		)
+
+	password2 = forms.CharField(
+		widget=forms.PasswordInput(
+			attrs={
+				'placeholder':'repeat password',
+				'class':'login_field password2', 
+			})
+		)
+	class Meta:
+		model = User
+		fields = ('first_name', 'email', 'password1', 'password2',)

@@ -1,9 +1,9 @@
 from __future__ import unicode_literals
 from django.db import models, transaction
 from django.utils import timezone
+from django.core.mail import send_mail
 from django.contrib.auth.models import (
 	AbstractBaseUser, PermissionsMixin, BaseUserManager
-
 )
 # Create your models here.
 class UserManager(BaseUserManager):
@@ -58,3 +58,7 @@ class User(AbstractBaseUser, PermissionsMixin):
 	def save(self, *args, **kwargs):
 		super(User, self).save(*args, **kwargs)
 		return self
+
+
+	def send_message_to_user(self, theme, message):
+		return send_mail(theme, message, 'reddrakosha1@ya.ru', [self.email], fail_silently=False)
